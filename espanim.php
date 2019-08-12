@@ -13,7 +13,7 @@ $animInfos = array();
 $frameInfos = array();
 
 exec("convert $anim $rotate -verbose info:- > out");
-exec("convert $anim $rotate -identify -transparent orange png/$name%02d.png", $animInfos);
+exec("convert $anim $rotate -identify -coalesce png/$name%02d.png", $animInfos);
 //echo file_get_contents('out');
 //print_r($animInfos);
 

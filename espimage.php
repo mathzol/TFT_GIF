@@ -15,7 +15,7 @@ $inFile = null;
 $outFile = null;
 $width = 0;
 $height = 0;
-$format = 'binary';
+$format = 'hex';
 
 
 function loadArgv($argv) {
@@ -95,7 +95,7 @@ function resizeImage($image, $max_width, $max_height)
  * @param [string:  $srcfilename]         url or local path to image file
  * @param [string:  $dstfilename]         local path to save raw stream to
  */
-function saveRGB565($srcfilename, $dstfilename, $max_width = 240, $max_height = 320, $format = "binary", $transcolor='0x0000') {
+function saveRGB565($srcfilename, $dstfilename, $max_width = 240, $max_height = 320, $format = "hex", $transcolor='0x0000') {
   $image = createImageFromFile($srcfilename);
   $fname = current(explode('.', $dstfilename));
   $oname = end(explode('/', $fname));
@@ -185,12 +185,12 @@ function saveRGB565($srcfilename, $dstfilename, $max_width = 240, $max_height = 
       for($i=0;$i<65536;$i++) {
         $hex = '0x'.str_pad(dechex( $i ), 4, '0', STR_PAD_LEFT);
         if(!isset($colorspace[$hex])) {
-          saveRGB565($srcfilename, $dstfilename, $max_width = 240, $max_height = 320, $format = "binary");
+          //saveRGB565($srcfilename, $dstfilename, $max_width = 240, $max_height = 320, $format = "binary");
           return;
           //break;
         }
       }
-      //saveRGB565($srcfilename, $dstfilename, $max_width = 240, $max_height = 320, $format = "binary") 
+      //saveRGB565($srcfilename, $dstfilename, $max_width = 240, $max_height = 320, $format = "binary")
     }
 
     echo "Is Transparent";
@@ -203,4 +203,3 @@ function saveRGB565($srcfilename, $dstfilename, $max_width = 240, $max_height = 
   }
 
 }
-
