@@ -5,3 +5,5 @@ This is a demo of the [TFT_eSPI](https://github.com/Bodmer/TFT_eSPI) library and
   [![Demo](https://img.youtube.com/vi/_Y-3KHMkWEo/0.jpg)](https://www.youtube.com/watch?v=_Y-3KHMkWEo)
 
 Images were converted using a [php utility](https://github.com/squix78/esp8266-weather-station/issues/61).
+
+USAGE: php espanim.php <animated.gif>
