@@ -50,8 +50,8 @@ foreach($animInfos as $pos => $info) {
     'imgheight'   => $imgheight,
     'framewidth'  => $framewidth,
     'frameheight' => $frameheight,
-    'offsetleft'  => $offsetleft,
-    'offsettop'   => $offsettop
+    'offsetleft'  => 0,
+    'offsettop'   => 0
   );
 
   //print_r($frameInfo);
@@ -86,7 +86,7 @@ foreach($pngFiles as $pos => $pngFile) {
   $outFile = $outName.'.c';
   $outRgbFile = $outName.'.rgb';
   $cmdout = array();
-  $cmd = "php espimage.php inFile=png/$pngFile outFile=str/$outFile width=$frameInfo[imgwidth] height=$frameInfo[imgheight] format=hex";
+  $cmd = "php espimage.php inFile=png/$pngFile outFile=str/$outFile width=128 height=128 format=hex";
   exec($cmd, $cmdout);
   $istransparent = false;
   $transparentcolor = '0x0000';
